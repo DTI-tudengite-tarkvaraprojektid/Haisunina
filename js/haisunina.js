@@ -1,14 +1,27 @@
-var mymap = L.map('mapid').setView([59.436, 24.753], 12);
+$('.nav a').on('click', function() {
+    $('.navbar-collapse').collapse('hide');
+});
 
-L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-    maxZoom: 18,
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-        '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-        'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    id: 'mapbox/streets-v11',
-    tileSize: 512,
-    zoomOffset: -1
-}).addTo(mymap);
+// var mymap = L.map('mapid').setView([59.436, 24.753], 11);
+//
+// L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+//     maxZoom: 18,
+//     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+//         '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+//         'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+//     id: 'mapbox/streets-v11',
+//     tileSize: 512,
+//     zoomOffset: -1
+// }).addTo(mymap);
+
+var map = L.map('mapid').setView([59.436, 24.753], 11);
+mapLink =
+    '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+L.tileLayer(
+    'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Map data &copy; ' + mapLink,
+        maxZoom: 18,
+    }).addTo(map);
 
 var locations = [
     [59.436, 24.753, "Mädanev", "Kellaaeg: 19:05"],
@@ -17,13 +30,12 @@ var locations = [
     [59.320, 24.750, "Keemiline", "Kellaaeg: 23:59"]
 ];
 for(let i = 0; i <= locations.length; i++){
-    L.marker([locations[i][0], locations[i][1]]).addTo(mymap)
+    L.marker([locations[i][0], locations[i][1]]).addTo(/*my*/map)
         .bindPopup("<b>"+locations[i][2] +"</b><br />"+locations[i][3]+"").openPopup();
 }
 
-$('.nav a').on('click', function() {
-    $('.navbar-collapse').collapse('hide');
-});
+
+
 
 
 
