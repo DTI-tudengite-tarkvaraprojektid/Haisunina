@@ -4,7 +4,7 @@ Projekt on tehtud Tallinna Ülikooli Digitehnoloogiate Instituudi tudengite pool
 
 # Ekraanipilt
 
-
+![pilt](https://github.com/georgha123/Haisunina/blob/master/ekraanipilt.png)
 
 # Eesmärk
 
