@@ -13,3 +13,9 @@ Haisunina põhieesmärk on teada saada haisude kohta informatsiooni Eestis ning 
 # Projekti panustajad 
 
 Projekti töösse panustasid: Karl Martin Vellik, Rainer Halanurm, Georg-Henri Allas, Raimo Pindus
+
+# Kasutatud tehnoloogiad
+
+# Paigaldusjuhised
+
+# Litsents
