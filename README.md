@@ -16,6 +16,12 @@ Projekti töösse panustasid: Karl Martin Vellik, Rainer Halanurm, Georg-Henri A
 
 # Kasutatud tehnoloogiad
 
+
+
 # Paigaldusjuhised
 
+
+
 # Litsents
+
+[Litsents](https://github.com/georgha123/Haisunina/blob/master/LICENSE.md)
