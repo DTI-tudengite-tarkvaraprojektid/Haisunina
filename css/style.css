@@ -6,3 +6,18 @@ html, body, #mapid {
     height: 97.95%;
     width: 100%;
 }
+
+#timeAuto:read-only, #dateAuto:read-only, #locationAuto:read-only{
+    background-color: white;
+}
+
+#element {
+    color: white;
+}
+
+.lang-icon{
+    position: absolute !important;
+    right: 0;
+    top: 0;
+  }
+

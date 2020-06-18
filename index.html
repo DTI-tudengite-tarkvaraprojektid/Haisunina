@@ -8,7 +8,14 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script defer src = "js/haisunina.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script defer src = "js/map.js"></script>
+
+<!--    <meta name="google-signin-scope" content="profile email">-->
+<!--    <meta name="google-signin-client_id" content="462903802393-lnttt26qdp0skae16ogiaiamdt43jqor.apps.googleusercontent.com">-->
+<!--    <script src="https://apis.google.com/js/platform.js" async defer></script>-->
+<!--    <script defer src = "js/googleLogin.js"></script>-->
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
@@ -22,6 +29,9 @@
             integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
             crossorigin=""></script>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+
     <title>Haisunina</title>
 </head>
 <body>
@@ -34,11 +44,20 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="entry.html">Sisesta hais</a>
+                    <a class="nav-link" href="entry.html">Sisesta lõhnahäiring</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="feedback.html">Tagasiside</a>
                 </li>
+<!--                <li class="nav-item">-->
+<!--                    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" id="signIn"></div>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a href="#" onclick="signOut();" id="signOut"></a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <div id="element"></div>-->
+<!--                </li>-->
             </ul>
         </div>
     </nav>
