@@ -5,21 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+            crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script defer src = "js/haisunina.js"></script>
-    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-            integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-            crossorigin=""></script>
+
+    <script defer src = "js/entry.js"></script>
+
+<!--    <meta name="google-signin-scope" content="profile email">-->
+<!--    <meta name="google-signin-client_id" content="462903802393-lnttt26qdp0skae16ogiaiamdt43jqor.apps.googleusercontent.com">-->
+<!--    <script src="https://apis.google.com/js/platform.js" async defer></script>-->
+<!--    <script defer src = "js/googleLogin.js"></script>-->
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
           crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
           integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
           crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+            integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+            crossorigin=""></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
 
     <title>Haisunina</title>
 </head>
@@ -33,77 +45,97 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="entry.html">Sisesta hais</a>
+                    <a class="nav-link" href="entry.html">Sisesta lõhnahäiring</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="feedback.html">Tagasiside</a>
+                </li>
+<!--                <li class="nav-item">-->
+<!--                    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" id="signIn"></div>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a href="#" onclick="signOut();" id="signOut"></a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <div id="element"></div>-->
                 </li>
             </ul>
         </div>
     </nav>
 
-    <p class="h1 ml-4">Sisesta hais</p>
+    <p class="h1 ml-4">Sisesta lõhnahäiring</p>
+    <form id="smellForm">
+        <div class="container justify-content-start ml-3 ">
+            <div class="row ">
+                <div class="col col-sm-6 ">
+                        <div class="form-group">
+                            <label for="smellSelect">Lõhnahäiringu iseloomustus</label>
+                            <select class="form-control" id="smellSelect" name="type">
+                            </select>
+                        </div>
 
-    <div class="container justify-content-start ml-3 ">
-        <div class="row ">
-            <div class="col col-sm-6 ">
-                <form>
+                        <div class="form-group">
+                            <textarea class="form-control" id="smellElse" name="Muu" rows="2" style="display: none;" placeholder="Lõhnahäiringu iseloomustus, kui valisite Muu"></textarea>
+                        </div>
 
-                    <div class="form-group">
-                        <label for="smellSelect">Haisu iseloomustus</label>
-                        <select class="form-control" id="smellSelect">
-                            <option>Vali...</option>
-                            <option>Hapukas</option>
-                            <option>Mädanev</option>
-                            <option>Keemiline</option>
-                            <option>Terav/Põletav</option>
-                            <option>Muu</option>
-                        </select>
-                    </div>
+                        <div class="form-group">
+                            <label for="customRange1">Lõhna tugevus</label>
+                            <input type="range" class="custom-range" id="customRange1" name="strength" min="1" max="10" value="5">
+                            <p>Tugevus: <span id="valueOutput"></span></p>
+                        </div>
+                </div>
 
-                    <div class="form-group">
-                        <label for="smellElse">Haisu iseloomustus, kui valisite Muu</label>
-                        <textarea class="form-control" id="smellElse" rows="2"></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="customRange1">Lõhna tugevus</label>
-                        <input type="range" class="custom-range" id="customRange1" min="1" max="10">
-                    </div>
-
-                    <button type="submit" class="btn btn-primary" id="smellSubmit">Sisesta</button>
-                </form>
-            </div>
-
-            <div class="col-sm-6">
-                <form>
+                <div class="col-sm-6">
                     <div class="form-check mb-4 mt-1">
-                        <input class="form-check-input mb-1" type="radio" name="timeRadio" id="timeRadio1" value="option1" checked>
+                        <input class="form-check-input mb-1" type="radio" name="timeRadio" id="timeRadio1" value="option1" checked="checked">
                         <label class="form-check-label" for="timeRadio1">
                             Kellaeg automaatselt
                         </label>
-                        <input type="time" class="form-control mt-1" id="timeManually" placeholder="Sisesta aeg ise">
+                        <br>
+                        <input class="form-control mt-1" id="timeAuto" name="time" readonly type="text" value="">
+
+                        <input class="form-check-input mb-1" type="radio" name="timeRadio" id="timeRadio2" value="option2">
+                        <label class="form-check-label" for="timeRadio2">
+                            Kellaeg manuaalselt
+                        </label>
+                        <input type="hidden" class="form-control mt-1" id="timeManually" name="timeManually" placeholder="Sisesta aeg ise">
                     </div>
 
                     <div class="form-check mb-4">
-                        <input class="form-check-input mb-1" type="radio" name="dateRadio" id="dateRadio1" value="option1" checked>
+                        <input class="form-check-input mb-1" type="radio" name="dateRadio" id="dateRadio1" value="option1" checked="checked">
                         <label class="form-check-label" for="dateRadio1">
                             Kuupäev automaatselt
                         </label>
-                        <input type="date" class="form-control mt-1" id="dateManually" placeholder="Sisesta kuupäev ise">
+                        <br>
+                        <input class="form-control mt-1" id="dateAuto" name="date" readonly type="text">
+
+                        <input class="form-check-input mb-1" type="radio" name="dateRadio" id="dateRadio2" value="option2">
+                        <label class="form-check-label" for="dateRadio2">
+                            Kuupäev manuaalselt
+                        </label>
+                        <input type="hidden" class="form-control mt-1" id="dateManually" name="dateManually" placeholder="Sisesta kuupäev ise">
                     </div>
 
-                    <div class="form-check">
-                        <input class="form-check-input " type="radio" name="locationRadio" id="locationRadio1" value="option1" checked>
+                    <div class="form-check" id="mapForm">
+                        <input class="form-check-input " type="radio" name="locationRadio" id="locationRadio1" value="option1" checked="checked">
                         <label class="form-check-label" for="locationRadio1">
                             Asukoht automaatselt
                         </label>
-                        <input type="text" class="form-control mt-1" id="locationManually" placeholder="Sisesta asukoht ise">
+                        <br>
+                        <input type="text" class="form-control mt-1" id="locationAuto" name="location" placeholder="Automaatne asukoha sisestus" readonly style="display: none;" value="0 0">
+                        <input class="form-check-input " type="radio" name="locationRadio" id="locationRadio2" value="">
+                        <label class="form-check-label" for="locationRadio2">
+                            Asukoht manuaalselt
+                        </label>
+                        <div id="manualMap" style=" width:525px; height:325px;"></div>
                     </div>
-
-                </form>
+                </div>
+                <div class="container pt-2 d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary mt-3" id="smellSubmit">Sisesta</button>
+                </div>
             </div>
         </div>
-    </div>
+    </form>
+
 </body>
 </html>
