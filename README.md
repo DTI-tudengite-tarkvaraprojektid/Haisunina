@@ -16,11 +16,11 @@ Projekti töösse panustasid: Karl Martin Vellik, Rainer Halanurm, Georg-Henri A
 
 # Kasutatud tehnoloogiad
 
-
+Kasutasime projekti loomiseks kolme programmikeelt: HTML, Javascript ja CSS. Kaart on imporditud Javascriptiga.
 
 # Paigaldusjuhised
 
-
+Et rakendus ise kodus tööle saada, tuleb kopeerida kõikides failides olev kood enda failidesse, mis on samanimelised ja mida on sama palju. Pärast seda tuleb vaadata kood hoolikalt läbi ja vajadusel muuta failide asukoha koodi, et programm saaks töötada.
 
 # Litsents
 
