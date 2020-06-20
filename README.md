@@ -16,11 +16,24 @@ Projekti töösse panustasid: Karl Martin Vellik, Rainer Halanurm, Georg-Henri A
 
 # Kasutatud tehnoloogiad
 
-Kasutasime projekti loomiseks kolme programmikeelt: HTML, Javascript ja CSS. Kaart on imporditud Javascriptiga.
+HTML
+JavaScript
+PHP
+MySQL
+Jquery 3.5.1
+Axios
+Bootstrap 4.4.1
+Leaflet 1.6.0
+Leaflet Easybutton
 
 # Paigaldusjuhised
 
-Et rakendus ise kodus tööle saada, tuleb kopeerida kõikides failides olev kood enda failidesse, mis on samanimelised ja mida on sama palju. Pärast seda tuleb vaadata kood hoolikalt läbi ja vajadusel muuta failide asukoha koodi, et programm saaks töötada.
+Lood MySQL andmebaasi kasutades mySQL/Haisunina_create.sql faili.
+Muudad api/config/databse.php failis ära muutujad vastavalt sinu andmetele ($db_username, $username, $password)
+Tõstad kõik failid (v.a mySQL kausta) ümber enda serverile, kus oleks ka ligipääs sinu MySQL andmebaasile.
+Domeenil peab olema HTTPS sertifikaat, et kaardil geoLocation töötaks.
+
+
 
 # Litsents
 
